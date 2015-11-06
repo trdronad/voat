@@ -55,7 +55,7 @@
                 <h4>ウェブサイトの音楽</h4>
             </div>
               <div class="text-left mar-l">
-                <h2>NEWS & RELEASE ニュースリリース</h2>
+                <h2>NEWS & RELEASE &nbsp;ニュースリリース</h2>
               </div><div class="doubleborder"></div>
 
                 <div class="date mar-l">
