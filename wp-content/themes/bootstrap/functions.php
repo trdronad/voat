@@ -180,3 +180,17 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
  	}
 endif;
 ?>
+<?php
+	/*Jonathan*/
+	//if ( function_exists('register_sidebar') ) {
+	//register_sidebar(array(
+//	'name' => 'News Sidebar',
+//	'id' => 'news-sidebar',
+//	'description' => 'Appears as the sidebar on the news page',
+//	'before_widget' => '<div style="height: 280px"></div><li id="%1$s" class="widget %2$s">',
+//	'after_widget' => '</li>',
+//	'before_title' => '<h2 class="widgettitle">',
+//	'after_title' => '</h2>',
+//	));
+//	}
+?>

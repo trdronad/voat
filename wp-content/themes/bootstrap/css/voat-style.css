@@ -436,3 +436,22 @@ footer a .fa{
         font-size: 25px;
     }
 }
+.newspage{
+    padding: 30px;
+
+}
+.newspage span{
+    margin-left: 10px;
+    font-size: 20px;
+
+}
+.newspage a{
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #333;
+    
+}
+.newspage {
+    margin-bottom: 5px;
+}
