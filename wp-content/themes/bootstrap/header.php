@@ -5,9 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/voat-style.css" rel="stylesheet" media="screen">
+		<link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/voat-style.css" rel="stylesheet" media="screen">
 		<link href="<?php bloginfo('stylesheet_url');?>" type="text/css" rel="stylesheet" media="screen, projection" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/bootstrap.min.js"></script>
     <?php
@@ -20,7 +20,7 @@
   <body <?php body_class(isset($class) ? $class : ''); ?>>
     
     <nav class="navbar navbar-default" role="navigation">
-       <a class ="text-center" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo.jpg"></a>
+       <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">

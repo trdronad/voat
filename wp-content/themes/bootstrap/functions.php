@@ -5,6 +5,23 @@
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( "title-tag" );
+//add dynamic custom header
+add_theme_support( 'custom-header' );
+$defaults = array(
+	'default-image'          => '',
+	'width'                  => 242,
+	'height'                 => 107,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'uploads'                => true,
+	'random-default'         => false,
+	'header-text'            => true,
+	'default-text-color'     => '',
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
 
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {
