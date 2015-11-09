@@ -1,5 +1,16 @@
 <?php 
 
+//ADD CSS and JS
+function boots_script_enqueue(){
+	wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.4', 'all');
+	wp_enqueue_style('voatstyle', get_template_directory_uri() . '/css/voat-style.css', array(), '1.0.0', 'all');
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0', 'all');
+	
+	wp_enqueue_script('jqueryjs', get_template_directory_uri() . '/js/jquery.js', array(), '1.0.0', true);
+	wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.4', true);
+}
+add_action('wp_enqueue_scripts', 'boots_script_enqueue');
+
 
 //Add thumbnail, automatic feed links and title tag support
 add_theme_support( 'post-thumbnails' );
@@ -8,18 +19,18 @@ add_theme_support( "title-tag" );
 //add dynamic custom header
 add_theme_support( 'custom-header' );
 $defaults = array(
-	'default-image'          => '',
-	'width'                  => 242,
-	'height'                 => 107,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'uploads'                => true,
-	'random-default'         => false,
-	'header-text'            => true,
-	'default-text-color'     => '',
-	'wp-head-callback'       => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
+		'default-image'          => '',
+		'width'                  => 242,
+		'height'                 => 107,
+		'flex-height'            => false,
+		'flex-width'             => false,
+		'uploads'                => true,
+		'random-default'         => false,
+		'header-text'            => true,
+		'default-text-color'     => '',
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
 
@@ -168,4 +179,5 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
 		}
  	}
 endif;
+>>>>>>> branch 'develop' of https://github.com/trdronad/voat.git
 ?>
