@@ -89,6 +89,9 @@ input, textarea{
 .box1 h1{
     color:#fff;
 }
+span.margin-l{
+    margin-left: 25px;
+}
 h1.text-center{
 	margin-top: 6px;
 	padding-top: 100px;
