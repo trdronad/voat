@@ -30,10 +30,3 @@
        <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav ', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
       </div><!-- /.navbar-collapse -->
     </nav>
-    
-    
-    
-    
-    	
-    	
->>>>>>> branch 'develop' of https://github.com/trdronad/voat.git

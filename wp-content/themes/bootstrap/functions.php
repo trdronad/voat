@@ -179,5 +179,4 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
 		}
  	}
 endif;
->>>>>>> branch 'develop' of https://github.com/trdronad/voat.git
 ?>
