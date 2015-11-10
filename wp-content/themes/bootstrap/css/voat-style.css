@@ -271,9 +271,6 @@ h1.s1{
 .comments-title{
     font-size: 25px;
 }
-#post-188, #post-190, #post-186{
-    min-height:500px;
-}
 footer{
 	height:auto;
 }
@@ -435,4 +432,14 @@ footer a .fa{
     .vid-box1 h1, .vid-box2 h1{
         font-size: 25px;
     }
+}
+.news-date
+{
+    padding-left:9%;
+}
+.category-news
+{
+    margin-top:-10px;
+    padding-left:10%;
+    padding-right:10%;
 }
