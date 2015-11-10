@@ -66,18 +66,32 @@ blockquote.right {
 	width: 33%;
 	float: right;
 	}
-.artist_container, .artist_ranking{
+.artist_container{
 	width: 1235px;
 	padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
+.artist_ranking{
+	width: 300px;
+	display: inline-flex;
+}
 .artist_post{
 	border: 1px solid gray;
 	margin-bottom: 20px;
 	text-align: center;
 }
-
+.artist_search {
+	float: right;
+}
+.widget_search input{
+	width: 25% !important;
+	border-radius: 20px;
+    border: 1px solid gray;
+    background: url("search_image.jpg");
+    height:28px;
+}
+}
 /*Wordpress editor styles end*/
 
