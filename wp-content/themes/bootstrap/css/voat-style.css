@@ -443,3 +443,8 @@ footer a .fa{
     padding-left:10%;
     padding-right:10%;
 }
+#s-share-buttons
+{
+    float:right;
+    margin-right:150px;
+}

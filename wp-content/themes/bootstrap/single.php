@@ -26,6 +26,17 @@
 	</article>
 
 	<?php
+	if(in_category('news'))
+	{
+		echo do_shortcode('[simple-social-share]');
+	}else
+	{
+		echo "";
+	}
+	?>
+
+
+	<?php
 
 	endwhile;
 
