@@ -74,18 +74,30 @@ blockquote.right {
     margin-left: auto;
 }
 .artist_ranking{
-	width: 300px;
-	display: inline-flex;
+	/*width: 200px;*/
+	margin-top: 20px;
+}
+.artist_ranking ul{
+    list-style-type: none; margin: 0px; padding: 0px;
+}
+.artist_ranking ul li{
+	display: inline-block;
+	width: 226px;
+	height: 244px;
+    margin: 5px;
+}
+.artist_post img{
+	max-width: 100%; height: 180px;
 }
 .artist_post{
 	border: 1px solid gray;
-	margin-bottom: 20px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 .artist_search {
 	float: right;
 }
-.widget_search input{
+.artist_cat input{
 	width: 25% !important;
 	border-radius: 20px;
     border: 1px solid gray;

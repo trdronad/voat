@@ -204,4 +204,17 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
 		}
  	}
 endif;
+
+
+ function add_meta_to_post($id, $post, $update) {
+ 
+	if (!$update) {
+		update_post_meta($id, "post_views_count", 0);
+		update_post_meta($id, "wpb_post_views_count", 0);
+	}
+ }
+ add_action("save_post","add_meta_to_post", 10, 3 );
+
+
+
 ?>
