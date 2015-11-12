@@ -98,5 +98,7 @@ blockquote.right {
 .artist2 .side-box h5 {
     margin-left: 12px;
 }
+.artist2 .main .musicbox {
+    height: 204px!important;
 /*Wordpress editor styles end*/
 
