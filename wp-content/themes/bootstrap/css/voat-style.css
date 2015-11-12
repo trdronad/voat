@@ -78,16 +78,20 @@ input, textarea{
 }
 .doubleborder{
 	border-bottom: 4px double darkblue;
+    margin-bottom: 15px;
 }
 .date{
 	margin-bottom: 100px;
 }
 .box1{
-	height:250px;
 	background-color: #0071bd;
+    min-height: 200px;
+    text-align: center;
+    margin-bottom: 10px
 }
-.box1 h1{
-    color:#fff;
+.box1 .attachment-post-thumbnail{
+       border-radius: 8px;
+       margin: 10px 0;
 }
 span.margin-l{
     margin-left: 25px;
@@ -119,14 +123,36 @@ h1.text-center{
 .mar-t{
     margin-top: 70px;
 }
-.news p{
-    margin-left: 20px;
-    font-size: 18px;
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>JONATHAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.newspage{
+    padding: 30px;
+
 }
-.news span{
-    text-decoration: underline;
+.newspage span{
     margin-left: 10px;
+    font-size: 20px;
+
 }
+.newspage a{
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #333;
+    
+}
+.newspage {
+    margin-bottom: 5px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END OF JONATHAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>KHENT CSS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+#s-share-buttons
+{
+    float:right;
+    margin-right:150px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END KHENT CSS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .art-box1, .art-box2{
     height:300px;
     border:1px solid grey;

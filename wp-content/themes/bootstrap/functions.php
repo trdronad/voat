@@ -14,6 +14,7 @@ add_action('wp_enqueue_scripts', 'boots_script_enqueue');
 
 //Add thumbnail, automatic feed links and title tag support
 add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 300, 300 );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( "title-tag" );
 //add dynamic custom header

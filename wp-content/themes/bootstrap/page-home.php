@@ -43,9 +43,7 @@
    <div class="contents container-fluid">
       <div class="row">
          <div class="social-icons text-right">
-            <!--  <i class="fa fa-facebook-official fa-3x"></i>
-               <i class="fa fa-twitter-square fa-3x"></i> -->
-            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/social.jpg"></a>
+            <?php echo do_shortcode('[simple-social-share]'); include 'like.php'; echo '&nbsp;'; ?>  
          </div>
          <div class="text-center">
             <h1>What's VOAT MUSIC Artist Bank</h1>
@@ -58,38 +56,37 @@
          <div class="doubleborder"></div>
          <div class="date mar-l">
             <?php
-   // The Query
-   query_posts( array ( 'category_name' => 'news', 'posts_per_page' => -1 ) );
-   ?>
-<?php
-   // The Loop
-   while ( have_posts() ) : the_post();
-            the_date('Y.m.d'); 
-      echo '<span class="margin-l"><span>';
-      echo '<a href="http://voat.localhost/news/">';  the_title();  echo '</a>'; 
-      the_content();
-      echo '<br />';
-      endwhile; ?>
-<?php
-   // Reset Query
-   wp_reset_query();
-   
-   ?>
+               query_posts( array ( 'category_name' => 'news', 'posts_per_page' => -1 ) );
+               ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+            <strong><?php echo  the_time('Y.m.d');?></strong>
+            <?php echo '<span class="margin-l"><span>'; ?>
+            <a href="<?php echo post_permalink(); ?>">
+            <?php echo the_title();?> </a>
+            <?php echo '<span class="margin-l"><span>'; ?>
+            <?php echo 'Posted By:'; ?>
+            <?php echo the_author_posts_link(); ?>
+            <br/>
+            <?php endwhile;?>
          </div>
          <div class="mar-l">
             <h3>PICK UP ARTIST これは長文です</h3>
          </div>
          <div class="doubleborder"></div>
-         <div class="box1">
-            <h1 class="text-center">これはサンプルです</h1>
+         <?php
+            query_posts( array ( 'category_name' => 'artist', 'posts_per_page' => -1) );
+            ?>
+         <?php while ( have_posts() ) : the_post(); ?>
+         <div class="box1 col-lg-12">
+            <a href="<?php echo the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_post_thumbnail(); ?>
+            </a>
          </div>
-         <div class="box1">
-            <h1 class="text-center">これはサンプルです</h1>
-         </div>
+         <?php endwhile;?>z
       </div>
    </div>
 </section>
 <div class="text-right">
-   <h5>>VIEWMORE</h5>
+   <h5><a href="<?php echo get_permalink("184"); ?>"><button>VIEWMORE</button></a></h5>
 </div>
 <?php get_footer(); ?>
