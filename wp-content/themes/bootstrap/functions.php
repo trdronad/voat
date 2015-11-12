@@ -33,7 +33,7 @@ $defaults = array(
 		'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
-//display post in ranking
+//count post per views
 function getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
@@ -59,6 +59,16 @@ function setPostViews($postID) {
 // Remove issues with prefetching adding extra views
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+//display all posts
+function add_meta_to_post($id, $post, $update) {
+ 
+	if (!$update) {
+		update_post_meta($id, "post_views_count", 0);
+		update_post_meta($id, "wpb_post_views_count", 0);
+	}
+}
+add_action("save_post","add_meta_to_post", 10, 3 );
+
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {
 	$content_width = 768;
@@ -72,7 +82,6 @@ if ( function_exists( 'register_nav_menus' ) ) {
   		)
   	);
 }
-
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
@@ -204,17 +213,4 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
 		}
  	}
 endif;
-
-
- function add_meta_to_post($id, $post, $update) {
- 
-	if (!$update) {
-		update_post_meta($id, "post_views_count", 0);
-		update_post_meta($id, "wpb_post_views_count", 0);
-	}
- }
- add_action("save_post","add_meta_to_post", 10, 3 );
-
-
-
 ?>

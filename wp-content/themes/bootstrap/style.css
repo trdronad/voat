@@ -101,9 +101,13 @@ blockquote.right {
 	width: 25% !important;
 	border-radius: 20px;
     border: 1px solid gray;
-    background: url("search_image.jpg");
     height:28px;
 }
+.artist_cat a{ font-size: 25px;}
+.artist_cat .sub{
+    background: url("img/search_image.jpg") no-repeat;
+    background-size: 10px 10px;
 }
+
 /*Wordpress editor styles end*/
 
