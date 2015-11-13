@@ -69,6 +69,17 @@ function add_meta_to_post($id, $post, $update) {
 }
 add_action("save_post","add_meta_to_post", 10, 3 );
 
+function template_chooser($template)   {    
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'post' )   
+  {
+    return locate_template('search.php');  //  redirect to archive-search.php
+  }   
+  return $template;   
+}
+add_filter('template_include', 'template_chooser');
+
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {
 	$content_width = 768;
