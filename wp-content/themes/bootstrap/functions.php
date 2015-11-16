@@ -80,6 +80,20 @@ function template_chooser($template)   {
 }
 add_filter('template_include', 'template_chooser');
 
+//dashboard post views count
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
+
+function posts_column_views($defaults){
+    $defaults['post_views'] = __('Views');
+    return $defaults;
+}
+function posts_custom_column_views($column_name, $id){
+        if($column_name === 'post_views'){
+        echo getPostViews(get_the_ID());
+    }
+}
+
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {
 	$content_width = 768;

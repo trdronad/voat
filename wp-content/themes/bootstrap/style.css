@@ -67,7 +67,7 @@ blockquote.right {
 	float: right;
 	}
 .artist_container{
-	width: 1235px;
+	width: 93%;
 	padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -98,17 +98,20 @@ blockquote.right {
 	float: right;
 }
 .artist_cat .search_text{
-	width: 85% !important;
+	width: 90% !important;
 	border-radius: 20px;
     border: 1px solid gray;
+	float: right;
     height: 20px;
     padding: 15px;
 	background: url("img/search_image.jpg") no-repeat;
-	background-position: 270px 6px;
+	background-position: 290px 6px;
     background-size: 20px 20px;
 }
 .artist_cat a{ font-size: 25px;}
-.artist_cat label, .artist_cat form{ width: 30%; }
+.artist_cat .cat_rank{ width: 70%; float: left;} 
+.artist_cat .ranks{ float: right;} 
+.artist_cat form{ width: 30%; float: right;}
 .search_results{ width: 95%; margin: auto; }
 .delimiter { clear: both; }
 
