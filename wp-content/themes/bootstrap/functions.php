@@ -18,7 +18,6 @@ set_post_thumbnail_size( 300, 300 );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( "title-tag" );
 //add dynamic custom header
-add_theme_support( 'custom-header' );
 $defaults = array(
 		'default-image'          => '',
 		'width'                  => 242,
@@ -34,6 +33,55 @@ $defaults = array(
 		'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
+
+//count post per views
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+// Remove issues with prefetching adding extra views
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+//display all posts
+function add_meta_to_post($id, $post, $update) {
+ 
+	if (!$update) {
+		update_post_meta($id, "post_views_count", 0);
+		update_post_meta($id, "wpb_post_views_count", 0);
+	}
+}
+add_action("save_post","add_meta_to_post", 10, 3 );
+
+
+function template_chooser($template)   {    
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'post' )   
+  {
+    return locate_template('searchresults.php');  //  redirect to archive-search.php
+  }   
+  return $template;   
+}
+add_filter('template_include', 'template_chooser');
+
 
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {

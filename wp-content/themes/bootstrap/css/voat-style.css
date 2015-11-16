@@ -70,6 +70,12 @@ li#menu-item-192{
 	color:#4a65b2;
 	margin-right: 15px;
 }
+.social-icons ul {
+    list-style: none;
+}
+.social-icons li{
+    display: inline-block !important;
+}
 input, textarea{
     width:100% !important;
 }
@@ -105,14 +111,11 @@ h1.text-center{
 }
 .about-box{
     text-align: center;
-    height: 300px;
-    background-color: #0071BC;
-    margin-top: 60px;
+    margin: 60px 0 0 0;
+    padding:0;
 }
-.about-box p{
-    font-size:30px;
-    padding-top: 130px;
-    color:#fff;
+.about-box img{
+    width: 100%;
 }
 .about-social{
     margin-top: 120px;
@@ -145,14 +148,7 @@ h1.text-center{
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END OF JONATHAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>KHENT CSS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-#s-share-buttons
-{
-    float:right;
-    margin-right:150px;
-}
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END KHENT CSS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .art-box1, .art-box2{
     height:300px;
     border:1px solid grey;

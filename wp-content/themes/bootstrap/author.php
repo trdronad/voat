@@ -36,5 +36,5 @@
 
     </ul>
 </div>
-<?php get_sidebar(); ?>
+<div class="container"> <?php get_sidebar(); ?> </div>
 <?php get_footer(); ?>

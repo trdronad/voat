@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <?php
    while ( have_posts() ) : the_post(); ?>
+  <?php setPostViews(get_the_ID()); ?>
 <?php if ( in_category('news') ) { ?>
 <div class="container">
 <h2> News | <?php echo the_time('Y.m.d'); ?></h2>

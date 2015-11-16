@@ -6,4 +6,5 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="fb-like" data-href="voat.localhost/?p=<?php echo get_the_ID(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
