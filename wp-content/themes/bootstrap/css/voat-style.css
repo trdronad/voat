@@ -482,7 +482,6 @@ article.cat_artist_post > div > img{
     width: 25%;
     height: auto;
     list-style: none;
-    sborder: 1px solid red;
     font-size: 20px;
     color: #333;
 
@@ -531,7 +530,6 @@ article.cat_artist_post > div > img{
     width: 200px;
     height: 200px;
     list-style: none;
-    sborder: 2px solid red;
     float: left;
 }
 .music-meta img{
@@ -539,7 +537,6 @@ article.cat_artist_post > div > img{
     width: 100%;
     height: auto;
     list-style: none;
-    sborder: 1px solid red;
 }
 .soundcloud-meta{
     width: 500px;
@@ -558,7 +555,6 @@ div.multimedia-meta > div.soundcloud-meta > div.soundcloud2-meta > iframe{
     width: 120%;
     height: 100px;
     float: left;
-    sborder-radius: 40px !important;
 }
 
 .video-meta{
@@ -566,7 +562,6 @@ div.multimedia-meta > div.soundcloud-meta > div.soundcloud2-meta > iframe{
     width: 100%;
     height: 400px;
     margin-top: 285px;
-    sborder:1px solid red;
 
 }
 .video1-meta, .video2-meta{
@@ -587,4 +582,21 @@ div.video-meta > div.video2-meta > iframe{
     font-size: 18px;
     padding:10px;
 
+}
+.social-icons ul {
+    list-style: none;
+    position: relative;
+}
+.social-icons li{
+    display: inline-block !important;
+}
+.bubble-social-icon > li:nth-child(2){
+    right: 75px;
+    position: absolute;
+}
+/*11/17/2015*/
+
+footer{
+    float: left;
+    width:100%;
 }
