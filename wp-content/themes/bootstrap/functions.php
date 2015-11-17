@@ -17,7 +17,6 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( "title-tag" );
 //add dynamic custom header
-add_theme_support( 'custom-header' );
 $defaults = array(
 		'default-image'          => '',
 		'width'                  => 242,

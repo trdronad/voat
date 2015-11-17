@@ -65,7 +65,17 @@ blockquote.right {
 	margin-right: 0;
 	width: 33%;
 	float: right;
-	}
+}
+.navbar-nav {
+    width: 100%;
+}
+.navbar-nav>li{
+	margin-left: 5px;
+}
+.navbar-default, .navbar-header {
+    margin-left: 0px !important;
+}
+.viewmore{ float: right;}
 .artist_container{
 	width: 93%;
 	padding-right: 15px;
@@ -78,7 +88,7 @@ blockquote.right {
 	margin-top: 20px;
 }
 .artist_ranking ul{
-    list-style-type: none; margin: 0px; padding: 0px;
+    list-style-type: none; margin: 4px; padding: 0px;
 }
 .artist_ranking ul li{
 	display: inline-block;
@@ -86,8 +96,12 @@ blockquote.right {
 	height: 244px;
     margin: 5px;
 }
+.artist_ranking .artist_post img{
+	margin: 0px 0 0px;
+}
 .artist_post img{
 	max-width: 100%; height: 180px;
+	margin: 20px 0 0px;
 }
 .artist_post{
 	border: 1px solid gray;
