@@ -1,5 +1,27 @@
 <?php 
 
+// custom admin login logo
+function my_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/log-logo.png);
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Your Site Name and Info';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+
 //ADD CSS and JS
 function boots_script_enqueue(){
 	wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.4', 'all');
@@ -14,10 +36,10 @@ add_action('wp_enqueue_scripts', 'boots_script_enqueue');
 
 //Add thumbnail, automatic feed links and title tag support
 add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 300, 300 );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( "title-tag" );
 //add dynamic custom header
-add_theme_support( 'custom-header' );
 $defaults = array(
 		'default-image'          => '',
 		'width'                  => 242,
@@ -33,6 +55,98 @@ $defaults = array(
 		'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
+
+///==================Jonathan Add ==============================
+/**
+* Define a constant path to our single template folder*/
+define(SINGLE_PATH, TEMPLATEPATH . '/single');
+
+/**
+* Filter the single_template with our custom function*/
+add_filter('single_template', 'my_single_template');
+
+/**
+* Single template function which will choose our template*/
+function my_single_template($single) {
+ global $wp_query, $post;
+
+/*** Checks for single template by ID*/
+ if(file_exists(SINGLE_PATH . '/single-' . $post->ID . '.php'))
+  return SINGLE_PATH . '/single-' . $post->ID . '.php';
+ /**
+ * Checks for single template by category
+ * Check by category slug and ID*/
+ foreach((array)get_the_category() as $cat) :
+
+  if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php'))
+   return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
+
+  elseif(file_exists(SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php'))
+   return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
+
+ endforeach;
+/*** Checks for default single post files within the single folder*/
+ if(file_exists(SINGLE_PATH . '/single.php'))
+  return SINGLE_PATH . '/single.php';
+
+ elseif(file_exists(SINGLE_PATH . '/default.php'))
+  return SINGLE_PATH . '/default.php';
+return $single;
+
+}
+
+
+//count post per views
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+// Remove issues with prefetching adding extra views
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+//display all posts
+function add_meta_to_post($id, $post, $update) {
+ 
+	if (!$update) {
+		update_post_meta($id, "post_views_count", 0);
+		update_post_meta($id, "wpb_post_views_count", 0);
+		
+	}
+}
+add_action("save_post","add_meta_to_post", 10, 3 );
+
+
+//dashboard post views count
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
+
+function posts_column_views($defaults){
+    $defaults['post_views'] = __('Views');
+    return $defaults;
+}
+function posts_custom_column_views($column_name, $id){
+        if($column_name === 'post_views'){
+        echo getPostViews(get_the_ID());
+    }
+}
 
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {
@@ -179,4 +293,8 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
 		}
  	}
 endif;
+function add_to_head() {
+	wp_enqueue_script("jquery-color",get_template_directory_uri()."/js/jquery.color.js", array("jquery"));
+}
+add_action("wp_enqueue_scripts","add_to_head");
 ?>

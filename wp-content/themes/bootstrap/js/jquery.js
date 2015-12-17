@@ -10300,7 +10300,10 @@ if ( typeof noGlobal === strundefined ) {
 	window.jQuery = window.$ = jQuery;
 }
 
-
+$('.my-subject').click(function(){ //on click of the order button
+var title = $(this).attr('dataTitle'); //put the current dataTitle in the variable title
+$(".artist-name input").val( title); //put the title as the subject in your contact form 7
+});
 
 
 return jQuery;

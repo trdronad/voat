@@ -1,74 +1,73 @@
 <?php get_header(); ?>
-<section>
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="<?php echo get_template_directory_uri() ?>/img/slider.jpg" alt="...">
-        <div class="carousel-caption">
-        </div>
-      </div>
-      <div class="item">
-        <img src="<?php echo get_template_directory_uri() ?>/img/slider.jpg" alt="...">
-        <div class="carousel-caption">
-        </div>
-      </div>
-      <div class="item">
-        <img src="<?php echo get_template_directory_uri() ?>/img/slider.jpg" alt="...">
-        <div class="carousel-caption">
-        </div>
-      </div>
-    </div>
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  <div class="contents container-fluid">
-        <div class="row">
-            <div class="social-icons text-right">
-               <!--  <i class="fa fa-facebook-official fa-3x"></i>
-               <i class="fa fa-twitter-square fa-3x"></i> -->
-               <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/social.jpg"></a>
-            </div>
-            <div class="text-center">
-              <h1>What's VOAT MUSIC Artist Bank</h1>
-                <h4>ウェブサイトの音楽ウェブサイウェブサイ</h4>
-                <h4>ウェブサイトの音楽</h4>
-            </div>
-            <div class="text-left mar-l">
-                <h2>NEWS & RELEASE &nbsp;ニュースリリース</h2>
-            </div><div class="doubleborder"></div>
-            <div class="date mar-l">
-                <h3>2015.10.20 これは長文です</h3>
-             </div>
-             <div class="mar-l">
-				<h3>PICK UP ARTIST これは長文です</h3>
-                </div><div class="doubleborder"></div>
 
-                    <div class="box1">
-                      <h1 class="text-center">これはサンプルです</h1>
-                    </div>
-                        <div class="box1">
-                          <h1 class="text-center">これはサンプルです</h1>
-                        </div>
-          </div>
+<div class="row">
+  
+  <div class="col-md-8">
+  
+    <?php if(have_posts()) : ?>
+       <?php while(have_posts()) : the_post(); ?>
+      <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <h2><?php the_title(); ?></h2>       
+        <?php the_content(); ?>
       </div>
-</section>
-      <div class="text-right">
-        <h5>>VIEWMORE</h5>
-      </div>
+      <?php
+      if (is_singular()) {
+        // support for pages split by nextpage quicktag
+        wp_link_pages();
+
+        if ( comments_open() || get_comments_number() ) :
+          comments_template();
+        endif;
+
+        // Previous/next post navigation.
+        the_post_navigation( array(
+          'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentyfifteen' ) . '</span> ' .
+            '<span class="screen-reader-text">' . __( 'Next post:', 'twentyfifteen' ) . '</span> ' .
+            '<span class="post-title">%title</span>',
+          'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentyfifteen' ) . '</span> ' .
+            '<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
+            '<span class="post-title">%title</span>',
+        ) );
+
+        // tags anyone?
+        the_tags();
+      }
+      ?>
+       <?php endwhile; ?>
+    
+    <?php if (!is_singular()) : ?>
+      <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+      <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+    <?php endif; ?>
+
+    <?php else : ?>
+    
+    <div class="alert alert-info">
+      <strong>No content in this loop</strong>
+    </div>
+    
+    <?php endif; ?>
+  
+  
+  </div>
+
+  <div class="col-md-4">
+  
+  <?php                       
+   if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar')) : //  Sidebar name
+  ?>
+    
+    
+    
+    <?php
+         endif;
+    ?>
+  
+  </div>
+
+</div>
+
+
+
 
 <?php get_footer(); ?>
-

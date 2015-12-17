@@ -1,15 +1,57 @@
 /*
-Theme Name: Bootstrap 3.1.1 Starter Wordpress theme
-Author: 3sparks llc
-Author URI: http://3sparks.net/
-Description: This is a blank bootstrap 3.1.1 theme for wordpress. Feel free to use this as a starter template for your projects.
+Theme Name: Voat 
+Author: Mango Team
+Description: Wordpress theme made from scratch for easy customization Voat site project .
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /*Wordpress editor styles start*/
+label{
+    max-width: 100px !important;
+    width: 100%;
+    float: left;
+}
+p:lang(eng) { 
+    overflow:hidden;
+}
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+/* custom edits jo */
+.artist_container .artist_post .artistnm {
+margin: 0;
+padding: 20px 0;
+line-height: 25px;
+margin: 4% 0 2% 0;
+}
+.artist_container .artist_post .artistnm a
+ {
+text-decoration: none;
+}
+.artist_container .artist_post .artistnm a.engname
+ {
+font-size: 60px;
+color: #000000;
+letter-spacing: 18px;
+}
 
+.artist_container .artist_post .artistnm a.engnamesm
+ {
+font-size: 15px;
+color: #a8a8a8;
+font-weight: lighter;
+letter-spacing: 13px;
+}
+/* end custom edits jo */
+
+.navbar-default .navbar-nav>li>a
+{
+    color: #777;
+    font-family: Kozuka Mincho Regular;
+}
 .entry-content img {
 	margin: 0 0 1.5em 0;
 	}
@@ -64,7 +106,125 @@ blockquote.right {
 	margin-right: 0;
 	width: 33%;
 	float: right;
-	}
+}
+.navbar-nav {
+    width: 100%;
+}
+.navbar-default, .navbar-header {
+    margin-left: 0px !important;
+}
+.navbar-collapse{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.navbar-default, .navbar-header {
+    padding: 15px 0px !important; 
+}
+.viewmore{ 
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+}
+.viewmore h5{ 
+    float: right;
+}
+.artist_container{
+    width: 93%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+artist_container a{
+	text-decoration: none !important;
+}
+.artist_ranking{
+    margin-top: 20px;
+}
+.artist_ranking ul{
+    list-style-type: none; margin: 4px; padding: 0px;
+}
+.artist_ranking .artist_post{
+    padding: 5px;
+    max-width: 300px;
+    width: 100%;
+    max-height: 335px;
+    height: auto;
+}
+.artist_ranking .artist_post img{
+	margin: 0px 0 0px;
+	height: 250px;
+	object-fit: contain;
+ }
+.artist_ranking .artist_post h3{
+	margin: 5px;
+	font-size: 18px;	
+ }
+.artist_ranking .artist_post h3 a{
+	color: black;
+ }
+.artist_ranking ul li{
+	display: inline-block;
+	width: 226px;
+	height: 300px;
+        margin: 5px;
+}
+.artist_post img{
+	max-width: 300px; 
+	height: 335px;
+	width: 100%;
+	margin: 0px 0 0px; 
+	object-fit: contain;
+}
+.artist_post{
+	border: 1px solid gray;
+	text-align: center;
+	margin-bottom: 20px;
+	height: 300px;
+}
+.artist_search {
+	float: right;
+}
+.artist_cat .search_text{
+	width: 90% !important;
+	border-radius: 20px;
+	border: 1px solid gray;
+	float: right;
+	height: 32px;
+    	padding: 0px;
+    	text-indent: 10px;
+	background: url("img/search_image.jpg") no-repeat;
+	background-position: 290px 6px;
+    	background-size: 20px 20px;
+}
+.artist_cat a{ font-size: 25px; text-decoration: none !important; }
+.artist_cat a:hover, .artist_cat a:focus {  text-decoration: none !important;  }
+.artist_cat .cat_rank{ width: 77%; float: left;} 
+.artist_cat .ranks{ float: right;} 
+.artist_cat form{ width: 23%; float: right;}
+.search_results{ width: 95%; margin: auto; }
+.delimiter { clear: both; }
+.color_date{ padding: 20px; float: right;}
+.color_date img{ 
+    max-width: 504px;
+    max-height: 40px;
+    width: 100%; }
 
+.wpcf7-form, .form_art_name{
+    width: 70% !important;
+    margin: auto;
+}
+.wpcf7-form input[type=submit]{
+	width: 25% !important;
+}
+.wpcf7-form input, .wpcf7-form textarea, .form_art_name input{
+	text-indent: 10px;
+	width: 88% !important;
+}
+.wpcf7-submit{
+    background-color: #0071bd;
+    border: none;
+    color: white;
+    padding: 10px;
+}
 /*Wordpress editor styles end*/
-

@@ -1,12 +1,10 @@
-
 <footer>
     <div class="text-center footicons">
-        <a href="<?php echo home_url(); ?>"><i class="fa fa-facebook-square fa-4x"></i></a>
-        <a href="<?php echo home_url(); ?>"><i class="fa fa-twitter-square fa-4x"></i></a>
-        <a href="<?php echo home_url(); ?>"><i class="fa fa-youtube fa-4x"></i></a><br />
+        <a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
+        <a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+        <a href="http://www.youtube.com" target="_blank"><i class="fa fa-youtube fa-3x"></i></a><br />
     </div>
 </footer>
 <?php wp_footer(); ?>
-
 </body>
 </html>
