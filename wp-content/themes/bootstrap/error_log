@@ -1,0 +1,1 @@
+[10-Dec-2015 15:01:06 Asia/Tokyo] PHP Fatal error:  Call to undefined function get_header() in /home/trcorp/public_html/voat/wp-content/themes/bootstrap/index.php on line 1
