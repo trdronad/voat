@@ -88,10 +88,21 @@ function posts_column_views($defaults){
     return $defaults;
 }
 function posts_custom_column_views($column_name, $id){
-        if($column_name === 'post_views'){
+	if($column_name === 'post_views'){
         echo getPostViews(get_the_ID());
     }
 }
+// artist color coding based on its date
+function randomColor(){
+    return "rgb(".rand(0, 255).", ".rand(50, 100).", ".rand(100, 150).")";
+}
+
+function radomDefinedColors(){
+    $colors = Array('#F52626', '#E0E047', '#7AB97A', '#FFFFFF');
+    $key_rand_color = array_rand($colors);
+	return $colors[$key_rand_color];
+}
+
 
 //Add content width (desktop default)
 if ( ! isset( $content_width ) ) {
@@ -237,4 +248,11 @@ if ( ! function_exists( 'bootstrap_setup' ) ):
 		}
  	}
 endif;
+
+
+	function add_to_head() {
+		wp_enqueue_script("jquery-color",get_template_directory_uri()."/js/jquery.color.js", array("jquery"));
+	}
+	add_action("wp_enqueue_scripts","add_to_head");
+
 ?>

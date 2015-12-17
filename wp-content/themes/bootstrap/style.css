@@ -75,6 +75,13 @@ blockquote.right {
 .navbar-default, .navbar-header {
     margin-left: 0px !important;
 }
+.navbar-collapse{
+	padding-left: 0px;
+	padding-right: 0px;
+} 
+.navbar-default, .navbar-header {
+    padding: 15px 0px !important; 
+}
 .viewmore{ float: right;}
 .artist_container{
 	width: 93%;
@@ -107,6 +114,7 @@ blockquote.right {
 	border: 1px solid gray;
 	text-align: center;
 	margin-bottom: 20px;
+	padding: 25px;
 }
 .artist_search {
 	float: right;
@@ -129,5 +137,46 @@ blockquote.right {
 .search_results{ width: 95%; margin: auto; }
 .delimiter { clear: both; }
 
+#searchwrapper {
+width:310px; 
+height:40px;
+/*background-image:url(THE_SEARCH_BOX_IMAGE);*/
+background-repeat:no-repeat; 
+padding:0px;
+margin:0px;
+position:relative; 
+float: right;
+}
+ 
+#searchwrapper form { display:inline ; }
+ 
+.searchbox{
+border:0px; 
+background-color:transparent; 
+position:absolute;
+top:4px;
+left:9px;
+width:256px !important;
+height:28px;
+border-radius: 20px 0px 0px 20px;
+border: 1px solid gray;
+border-right-style: none;
+text-indent: 10px;
+}
+ 
+.searchbox_submit{
+border:0px; 
+background-color:transparent; 
+position:absolute; 
+top:4px;
+left:265px;
+width:32px !important;
+height:28px;
+border-radius: 0px 20px 20px 0px;
+border-left-style: none !important;
+border: 1px solid gray;
+}
+.color_date{ padding: 20px; float: right;}
+.color_date img{ max-width: 350px; width: 100%;}
 /*Wordpress editor styles end*/
 

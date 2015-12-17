@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<link href="<?php bloginfo('stylesheet_url');?>" type="text/css" rel="stylesheet" media="screen, projection" />
+
+
     <?php
     // add JS for comment threading support
     if ( is_singular() ) wp_enqueue_script( 'comment-reply' );

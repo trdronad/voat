@@ -1,4 +1,3 @@
-
 <footer>
     <div class="text-center footicons">
         <a href="<?php echo home_url(); ?>"><i class="fa fa-facebook-square fa-4x"></i></a>
@@ -7,6 +6,6 @@
     </div>
 </footer>
 <?php wp_footer(); ?>
-
+<script src="http://localhost/voat/wp-content/themes/bootstrap/js/blogindex.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,3 +1,35 @@
+@font-face {
+    font-family: Kozuka Mincho Regular;
+    src: url('../fonts/voat_fonts/KozGoPr6N-Regular.otf');
+}
+
+@font-face {
+    font-family: Kozuka Mincho Medium;
+    src: url('../fonts/voat_fonts/KozGoPr6N-Medium.otf');
+}
+
+
+@font-face {
+    font-family: Kozuka Mincho Light;
+    src: url('../fonts/voat_fonts/KozGoPr6N-Light.otf');
+}
+
+@font-face {
+    font-family: Kozuka Mincho Heavy;
+    src: url('../fonts/voat_fonts/KozGoPr6N-Heavy.otf');
+}
+
+
+@font-face {
+    font-family: Kozuka Mincho ExtraLight;
+    src: url('../fonts/voat_fonts/KozGoPr6N-ExtraLight.otf');
+}
+
+@font-face {
+    font-family: Kozuka Mincho Bold;
+    src: url('../fonts/voat_fonts/KozGoPr6N-Bold.otf');
+}
+
 body{
 	margin: 0 5px;
 }
@@ -7,6 +39,18 @@ body{
 	text-align: center;
     margin-left: 20px;
 }
+.collapse{
+    max-width: 1337px;
+    margin:0 auto;
+    width: auto;
+}
+                                                                    
+ul#menu-primary-navigation {                                                                       
+    width: 100%;
+    margin: 0 auto;
+
+}
+
 .navbar-brand{
 	margin:0;
 	padding:0;
@@ -16,16 +60,19 @@ body{
 }
 .navbar-nav>li {
 	margin-top: 25px;
+	margin-left: 8px;
     float: left;
-    border-left: 2px solid gray;
-    font-size: 30px;
-    padding:15px 25px;
+    border-left: 1px solid #636060;
+    font-size: 21px;
+    padding: 15px 0px 15px 8px;
+	width: 19.3%;
 }
 li#menu-item-192{
-    border-right: 2px solid gray;
+    border-right: 1px solid #636060;
+	padding: 15px 8px;
 }
 .navbar-toggle{
-	margin:10px 20px;
+	margin:10px 10px;
 }
 .navbar-default .navbar-collapse{
     border-color: #fff;
@@ -63,12 +110,17 @@ li#menu-item-192{
 
 }
 .contents .text-center{
-	padding-top: 80px;
-	height:400px;
+	padding:70px 0;
 }
 .contents .fa{
 	color:#4a65b2;
 	margin-right: 15px;
+}
+.social-icons ul {
+    list-style: none;
+}
+.social-icons li{
+    display: inline-block !important;
 }
 input, textarea{
     width:100% !important;
@@ -78,16 +130,23 @@ input, textarea{
 }
 .doubleborder{
 	border-bottom: 4px double darkblue;
+    margin-bottom: 15px;
 }
 .date{
 	margin-bottom: 100px;
 }
 .box1{
-	height:250px;
 	background-color: #0071bd;
+    min-height: 200px;
+    text-align: center;
+    margin-bottom: 10px
 }
-.box1 h1{
-    color:#fff;
+.box1 .attachment-post-thumbnail{
+       border-radius: 8px;
+       margin: 10px 0;
+}
+span.margin-l{
+    margin-left: 25px;
 }
 h1.text-center{
 	margin-top: 6px;
@@ -98,17 +157,25 @@ h1.text-center{
 }
 .about-box{
     text-align: center;
-    height: 300px;
-    background-color: #0071BC;
     margin-top: 60px;
+}
+.about-box img{
+    width:85%;
+    height:auto;
+    text-align: center
 }
 .about-box p{
     font-size:30px;
     padding-top: 130px;
     color:#fff;
 }
+body > section > div.contents.container-fluid > div > div.text-center > h4,
+body > div.container.about > h3.text-center,
+body > div.container.about > h4.text-left{
+    line-height: 1.5em;
+}
 .about-social{
-    margin-top: 120px;
+    margin-top: 90px;
 }
 .min-h{
     min-height: 500px;
@@ -116,14 +183,27 @@ h1.text-center{
 .mar-t{
     margin-top: 70px;
 }
-.news p{
-    margin-left: 20px;
-    font-size: 18px;
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>JONATHAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.newspage {
+    padding: 0 30px 0 30px;
 }
-.news span{
-    text-decoration: underline;
+.newspage span{
     margin-left: 10px;
+    font-size: 20px;
+
 }
+.newspage a{
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #333;
+    
+}
+.newspage {
+    margin-bottom: 5px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>END OF JONATHAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
 .art-box1, .art-box2{
     height:300px;
     border:1px solid grey;
@@ -189,6 +269,23 @@ h1.text-center{
     font-size:25px;
     font-weight: bold;
     color:#000;
+}
+.audition table img
+{
+    border-radius:50%;
+    opacity:0.7;
+}
+.audition table img:hover
+{
+    opacity:1.0;
+}
+.audition table tr td
+{
+    padding:10px;
+}
+.audition h1
+{
+    font-size:80px;
 }
 .news2 h4{
     margin-top: 20px
@@ -258,6 +355,9 @@ h1.text-center{
     color:#fff;
     padding-top: 50px;
 }
+.artist_cat .search_text{
+    background-position: right;
+}
 h1.s1{
     margin-top: 0 !important;
 }
@@ -267,6 +367,9 @@ h1.s1{
 .artist2 .main .artist2-news strong{
     text-decoration: underline;
     margin-left: 10px;
+}
+ol.comment-list {
+    list-style: none;
 }
 .comments-title{
     font-size: 25px;
@@ -289,35 +392,24 @@ footer a .fa{
     color: #353535;
 }
 
-
-
-
 @media screen and (max-width: 1333px ){
-    .navbar-default,.navbar-header{
-    text-align: center;
-    margin-left: -8px;
-    }
+	.navbar-nav>li {
+		font-size: 19px;
+		width: 19%;
+	}
 }
 @media screen and (max-width: 1305px ){
     .navbar-default,.navbar-header{
     margin-left: 20px;
-    }
-    .navbar-nav>li {
-    padding:15px 20px;
     }
 }
 @media screen and (max-width: 1273px ){
     .navbar-default,.navbar-header{
     margin-left: 20px;
     }
-    .navbar-nav>li {
-    padding:15px 18px;
-    }
-}
-@media screen and (max-width: 1249px ){
-     .navbar-nav>li {
-    padding:15px 10px;
-    }
+	.navbar-nav>li {
+		font-size: 18px;
+	}
 }
 @media screen and (max-width: 1199px ){
     .musicrec{
@@ -327,25 +419,14 @@ footer a .fa{
         padding-top: 80px;
     }
 }
-@media screen and (max-width: 1153px ){
-    .navbar-nav>li {
-    padding:15px 5px;
-    }
-}
 @media screen and (max-width: 1093px ){
     .navbar-default,.navbar-header{
     margin-left: 0px;
     }
-}
-@media screen and (max-width: 1073px ){
-     .navbar-nav>li {
-    padding:15px 2px;
-    }
-}
-@media screen and (max-width: 1037px ){
-    .navbar-nav>li {
-    padding:15px 0px;
-    }
+	.navbar-nav>li {
+		margin-left: 6px;
+		font-size: 18px;
+	}
 }
 @media screen and (max-width: 1013px ){
      .navbar-default,.navbar-header{
@@ -353,13 +434,34 @@ footer a .fa{
           margin-left: 50px;
     }
     .navbar-nav>li {
-        font-size: 20px;
+        font-size: 14px;
+		margin-left: 5px;
+		padding: 15px 6px;
+    }
+	li#menu-item-192 {
+		padding: 15px 6px;
+	}
+    .audition h2
+    {
+        font-size:2.0em;
     }
 }
 @media screen and (max-width: 845px ){
     .navbar-default,.navbar-header{
           padding:15px 18px;
           margin-left: 20px;
+    }
+	.navbar-nav>li {
+        font-size: 13px;
+		margin-left: 4px;
+		padding: 15px 5px;
+    }
+	li#menu-item-192 {
+		padding: 15px 5px;
+	}
+    .audition h3
+    {
+        font-size:1.2em;
     }
 }
 @media screen and (max-width: 815px ){
@@ -368,15 +470,13 @@ footer a .fa{
           margin-left: 0px;
     }
     .navbar-nav>li {
-        font-size: 20px;
+        font-size: 12px;
+		margin-left: 4px;
     }
 }
 @media screen and (max-width: 779px ){
     .navbar-default,.navbar-header{
     margin-left: -15px;
-    }
-     .navbar-nav>li {
-    padding:15px 0px;
     }
 }
 @media screen and (max-width: 767px){
@@ -392,13 +492,17 @@ footer a .fa{
 .navbar-nav li{
 	background-color: gray;
 	margin-top: 3px;
+	width: 100%;
+}
+li#menu-item-192 {
+    padding: 0px 0px;
 }
 .navbar-nav>li>a {
     line-height: 0px;
     color:#fff !important;
    }
  .navbar-nav {
-    margin: 2px -15px;
+    margin: 2px 0px;
 }
 .carousel-indicators li {
     display: inline-block;
@@ -423,6 +527,7 @@ footer a .fa{
     float: none;
     border: none !important;
     padding: 0 0;
+	margin-left: 0px;
 }
 
 .navbar-collapse  .navbar-nav>li>a {
@@ -430,9 +535,210 @@ footer a .fa{
     color: #350303 !important;
     padding: 20px 0;
 }
-} 
+.artist_container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.artist_cat .ranks {
+    float: left;
+}
+.artist_cat .cat_rank {
+    width: 60%;
+    float: left;
+}
+.artist_cat form {
+    width: 40%;
+    float: right;
+}
+.audition h2{
+    font-size:1.5em;
+}
+.audition h1{
+    font-size:60px;
+}
+
+}
+@media screen and (max-width: 530px){
+	.artist_cat a {
+		font-size: 18px;
+		font-weight: bold;
+		height: auto;
+	}
+}
+@media screen and (max-width: 480px){
+	.page-id-177 > h3 >p{
+	 font-size:75%;
+	}
+}
 @media screen and (max-width: 370px){
     .vid-box1 h1, .vid-box2 h1{
         font-size: 25px;
     }
+	.artist_cat .cat_rank, .artist_cat form{
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.artist_cat a {
+		font-size: 20px;
+	}
+	.artist_cat .search_text {
+		width: 100% !important;
+		padding: 12px;
+		float: left;
+	}
+}
+@media screen and (max-width: 350px){
+    .social-icons{
+        margin-left:-40px;
+    }
+}
+/**Jonathan Added**/
+/*CONTAINER ALL*/
+
+article.cat_artist_post > div{
+    margin-bottom: 10px;
+}
+/*CONTENT*/
+article.cat_artist_post > div > img{
+    margin:0 auto;
+}
+.thumbnail-artist-post img{
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+.artist-content-post{
+    clear: both;
+    font-family: Kozuka Mincho Regular;
+}
+article.cat_artist_post h3,
+article.cat_artist_post h1,
+article.cat_artist_post h4{
+    font-family: Kozuka Mincho ExtraLight;
+}
+/*PROFILE*/
+.profile-meta{
+    float: left;
+    height: auto;
+    list-style: none;
+    font-size: 20px;
+    color: #333;
+    font-family: Kozuka Mincho Regular;
+
+}
+.profile-meta-value{
+
+    border: 1px solid #00b9f2;
+}
+.profile-meta-social a{
+    font-family: Kozuka Mincho Regular;
+    text-decoration: none;
+    color: #333;
+}
+.profile-meta-social a:hover{
+    color: #00b9f2;
+}
+.contact-blue{
+    height: auto;
+    color: #fff;
+    background-color: #00b9f2;
+}
+@media screen and (max-width: 400px){
+    .contact-blue h1{
+        font-size: 24px;
+    }
+    .artist-interest-contact{
+        font-size: 15px;
+    }
+}
+
+.contact-blue h3{
+    font-size: 21px;
+
+}
+.reply-staff-head{
+    clear: both;
+}
+.reply-staff{
+    float: right;
+    color: #333;
+}
+
+/*MUSIC*/
+.music-meta{
+
+    height: auto;
+    list-style: none;
+    float: left;
+}
+.music-meta img{
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    list-style: none;
+}
+.music-meta h4{
+    float: right;
+}
+.soundcloud-meta{
+    height: auto;
+    margin: 50px 0 20px 0;
+
+}
+
+div.multimedia-meta > div.soundcloud-meta > div.soundcloud1-meta > iframe{
+    width: 100%;
+    height: 100px;
+}
+div.multimedia-meta > div.soundcloud-meta > div.soundcloud2-meta > iframe{
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+/*VIDEO*/
+.video-meta{
+    clear: both;
+    height: auto;
+    margin-top: 10px;
+
+}
+.video1-meta, .video2-meta{
+    float: left;   
+}
+
+div.video1-meta > iframe, div.video2-meta > iframe{
+    width: 100%;
+    height: auto;
+}
+
+.comment-section-artist{
+    clear: both;
+}
+
+.valuepro{
+    color: #333;
+    font-size: 18px;
+    padding:10px;
+
+}
+/*NEWS*/
+.newspage{
+    font-family: Kozuka Mincho Light;
+}
+.latest-news-section{
+    margin-bottom: 20px;
+    font-family: Kozuka Mincho Light;
+}
+/*COMMENT*/
+.comment-section-artist{
+    font-family: Kozuka Mincho Light;
+}
+.comment-list, .comment-list .children {
+    list-style: none;
+}
+/*END JONATHAN*/
+
+footer{
+    width:100%;
 }
