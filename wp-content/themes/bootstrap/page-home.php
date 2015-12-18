@@ -55,20 +55,6 @@
 
         }
       ?>
-<!--
-      <div class="carousel-inner" role="listbox">
-         <div class="item active">
-            <img src="<?php the_field('slide-img-1'); ?>" alt="...">
-            <div class="carousel-caption">
-            </div>
-         </div>
-         <div class="item">
-            <img src="<?php the_field('slide-img-2'); ?>" alt="...">
-            <div class="carousel-caption">
-            </div>
-         </div>
-      </div>
--->
 
       <br />
       <!-- Indicators -->
@@ -94,7 +80,7 @@
             <h4><?php the_field('home-desc'); ?></h4>
          </div>
          <div class="text-left mar-l">
-            <h2><?php the_field('news-release-title'); ?></h2>
+            <h2>NEWS & RELEASE  <span style="font-size:21px;font-weight:bold">&nbsp;新着情報</span></h2>
          </div>
          <div class="doubleborder"></div>
          <div class="date mar-l">
@@ -102,7 +88,7 @@
                query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 4 ) );
                ?>
                 <?php while ( have_posts() ) : the_post(); ?>
-                <strong><?php echo  the_time('Y.m.d');?></strong>
+                <strong style="font-size:20px"><?php echo  the_time('Y.m.d');?></strong>
                 <?php echo '<span class="margin-l"><span>'; ?>
                 <a href="<?php echo post_permalink(); ?>" style="text-decoration:underline;color:#000;font-size:25px;">
                 <?php echo the_title();?> </a>
@@ -114,7 +100,7 @@
                  ?>
          </div>
          <div class="mar-l">
-            <h2><?php the_field('pickup-artist-title'); ?></h2>
+            <h2>PICK UP ARTIST  <span style="font-size:21px;font-weight:bold">&nbsp;一押しアーティスト</span></h2>
          </div>
          <div class="doubleborder"></div>
          <?php

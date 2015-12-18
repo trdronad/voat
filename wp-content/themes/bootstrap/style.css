@@ -127,6 +127,11 @@ blockquote.right {
 }
 .viewmore h5{ 
     float: right;
+    margin: 0px 10px 0px 10px;
+}
+.viewmore h5 a{ 
+	color: #5A5252;
+	font-size: 18px;
 }
 .artist_container{
     width: 93%;
@@ -139,35 +144,36 @@ artist_container a{
 	text-decoration: none !important;
 }
 .artist_ranking{
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .artist_ranking ul{
-    list-style-type: none; margin: 4px; padding: 0px;
+    list-style-type: none; margin: 0px; padding: 0px;
 }
 .artist_ranking .artist_post{
-    padding: 5px;
-    max-width: 300px;
-    width: 100%;
-    max-height: 335px;
-    height: auto;
+   	margin: 0px;
+    	padding: 5px;
+    	max-width: 300px;
+    	width: 100%;
+    	/*max-height: 335px;*/
+    	height: auto;
 }
 .artist_ranking .artist_post img{
 	margin: 0px 0 0px;
-	height: 250px;
+	height: 155px;
 	object-fit: contain;
  }
 .artist_ranking .artist_post h3{
 	margin: 5px;
-	font-size: 18px;	
+	font-size: 13px;	
  }
 .artist_ranking .artist_post h3 a{
 	color: black;
  }
 .artist_ranking ul li{
 	display: inline-block;
-	width: 226px;
-	height: 300px;
-        margin: 5px;
+    	width: 185px;
+    	height: 195px;
+    	margin: 5px;
 }
 .artist_post img{
 	max-width: 300px; 
@@ -197,14 +203,18 @@ artist_container a{
 	background-position: 290px 6px;
     	background-size: 20px 20px;
 }
-.artist_cat a{ font-size: 25px; text-decoration: none !important; }
-.artist_cat a:hover, .artist_cat a:focus {  text-decoration: none !important;  }
+.artist_cat a{ 
+	font-size: 25px;
+	color: #000; 
+	text-decoration: none !important;
+}
+.artist_cat a:hover, .artist_cat a:focus, .viewmore h5 a:focus, .viewmore h5 a:hover {  text-decoration: none !important;  }
 .artist_cat .cat_rank{ width: 77%; float: left;} 
 .artist_cat .ranks{ float: right;} 
 .artist_cat form{ width: 23%; float: right;}
 .search_results{ width: 95%; margin: auto; }
 .delimiter { clear: both; }
-.color_date{ padding: 20px; float: right;}
+.color_date{ float: right;}
 .color_date img{ 
     max-width: 504px;
     max-height: 40px;
@@ -226,5 +236,14 @@ artist_container a{
     border: none;
     color: white;
     padding: 10px;
+}
+.japrelease{
+    display: inline;
+}
+.newsheadrelease{
+    display: inline;
+}
+body > footer > .text-center{
+	clear:both;
 }
 /*Wordpress editor styles end*/

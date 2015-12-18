@@ -21,18 +21,21 @@ if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
            $the_query->the_post();
                  ?>
-                    <div class="artist_post" style='text-align: center;'>
-					<div class="artistnm">
-						<a class="engname"href="<?php the_permalink();?>"><?php the_title();?></a><br>
-						<a class="engnamesm"href="<?php the_permalink();?>"><?php the_field('english_name'); ?></a>
-					</div>
-					<div style='display: inline-block; vertical-align: middle;'>
-						<a href="<?php echo post_permalink(); ?>"><?php
+                   <div class="home-artist">
+          <div class="fix">
+          <div class="artistnm">
+            <a class="engname"href="<?php the_permalink();?>"><?php the_title();?></a><br>
+            <a class="engnamesm"href="<?php the_permalink();?>"><?php the_field('english_name'); ?></a>
+          </div>
+          <div class="home-artist-img" style='display: inline-block; vertical-align: middle;'>
+
+            <a href="<?php echo post_permalink(); ?>"><?php
                 $image = get_field('pic');
                 if( !empty($image) ): ?>
                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php endif; ?></a>
-					</div>
-				</div>
+          </div>
+        </div>
+        </div>
                  <?php
         }
     }else{
