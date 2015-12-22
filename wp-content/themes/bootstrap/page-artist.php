@@ -42,7 +42,7 @@
 		<div class="color_date"><img src="http://voat.trcorp.cho88.com/wp-content/uploads/2015/11/color-code.jpg" alt=""></div>
 	</div>
 
-
+<?php ?>
 <?php function rank_artist(){
 	$args = array( 'category_name' => 'artist', 'posts_per_page' => -1, 'meta_key' => 'post_views_count'  );
 	if(isset($_REQUEST["cat"]))	
@@ -54,13 +54,18 @@
 	}
 	
 	 
-			$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-			$args = array(
-			   'posts_per_page' => 10,
-			   'paged' => $paged,
-			   'category_name' => 'artist'
-			);
-			$custom_query = new WP_Query( $args );
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+			
+		$argsd = array( 'category_name' => 'artist', 'posts_per_page' => 10, 'paged' => $paged  );
+			if(isset($_REQUEST["cat"]))	
+				$argsd["cat"] = $_REQUEST["cat"];
+			if(isset($_REQUEST["rank"]) && $_REQUEST["rank"]=="true") {
+				$argsd["meta_key"] = 'post_views_count';
+				$argsd["orderby"] = 'meta_value_num';
+				$argsd["order"] = 'DESC';
+			}
+
+			$custom_query = new WP_Query( $argsd );
 
 		$popularpost = new WP_Query($args);
 	while ( $popularpost && $custom_query->have_posts() ) : $popularpost && $custom_query->the_post(); ?><?php
@@ -79,27 +84,37 @@
 				<?php else: ?>
 						<div class="artist_post" style="">
 				<?php endif; ?>
-				<a href="<?php echo post_permalink(); ?>"><?php
-	                $image = get_field('pic');
-	                if( !empty($image) ): ?>
-	                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php endif; ?></a>
-				<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
-			</div></li>
+					<a href="<?php echo post_permalink(); ?>"><?php
+		                $image = get_field('pic');
+		                if( !empty($image) ): ?>
+		                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php endif; ?></a>
+					<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+					</div>
+			</li>
 	<?php 
 		endwhile; } 
 	?>
 	
+
+
+
+
+
+
+
+
+
 	<?php	
 	/*Nath pagination*/
 	
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	 
-	$args = array(
+	$argsd = array(
 	   'posts_per_page' => 10,
 	   'paged' => $paged,
 	   'category_name' => 'artist'
 	);
-	$custom_query = new WP_Query( $args );?>
+	$custom_query = new WP_Query( $argsd );?>
 	<div class="paginumbers col-lg-12" style="clear:both;">
 	<?php
 	if (function_exists("pagination")) {

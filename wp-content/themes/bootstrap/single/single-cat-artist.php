@@ -92,7 +92,7 @@ get_header(); ?>
 
                   <div class="post-meta-contact">
 
-                    <form action="http://voat.trcorp.cho88.com/contact-form/" method="get">
+                    <form action="<?php get_template_directory_uri(); ?>/contact-form/" method="get">
                       <input type="text" class="get-artist-value" name="post-title-contact" value="<?php the_title();  ?>" />
                     
                        <button class="contact-blue" type="submit">
@@ -200,9 +200,9 @@ get_header(); ?>
 
 
 
-                  <div class="video-panel col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="video-panel col-lg-12 col-md-8 col-md-offset-1 col-sm-12 col-xs-12">
 
-                    
+
 
                     <div class="video1-meta col-lg-6 col-md-6 cold-sm-12 cold-xs-12">
 
@@ -250,7 +250,7 @@ get_header(); ?>
 
                 </div>
 
-                <div class="comment-section-artist">
+                <div class="comment-section-artist col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                   <h3>COMENT</h3>
 
